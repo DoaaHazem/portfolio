@@ -14,6 +14,9 @@ import {
   TrendingUp,
   Award,
   Calendar,
+  Server,
+  Globe2,
+  Layers,
   MapPin,
   Phone
 } from 'lucide-react';
@@ -27,7 +30,7 @@ function App() {
       setScrolled(window.scrollY > 50);
       
       // Update active section based on scroll position
-      const sections = ['home', 'about', 'skills', 'projects', 'experience', 'contact'];
+      const sections = ['home', 'about', 'education', 'skills', 'experience', 'services','projects', 'contact'];
       const currentSection = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -69,9 +72,11 @@ function App() {
               {[
                 { id: 'home', label: 'Home' },
                 { id: 'about', label: 'About' },
+                { id: 'education', label: 'Education' },
                 { id: 'skills', label: 'Skills' },
-                { id: 'projects', label: 'Projects' },
                 { id: 'experience', label: 'Experience' },
+                { id: 'services', label: 'Services' },
+                { id: 'projects', label: 'Projects' },
                 { id: 'contact', label: 'Contact' }
               ].map(item => (
                 <button
@@ -144,15 +149,19 @@ function App() {
           About Me
         </h2>
         <p className="text-lg text-gray-600 mb-6">
-          I’m <span className="font-semibold text-blue-600">Doaa Hazem</span>, a recent Artificial Intelligence graduate (2025) 
-          with a GPA of 3.72/4.0. I’m passionate about transforming data into actionable insights 
-          and building AI-powered solutions that solve real-world problems. 
+          I’m <span className="font-semibold text-blue-600">Doaa Hazem</span>, a Data Scientist with a background 
+          in Artificial Intelligence and a passion for uncovering stories hidden in data.
+        </p>
+        <p className="text-lg text-gray-600 mb-6">
+          My journey started as a Computer and AI student at Benha University, where I built a strong foundation 
+          in ML, DL, NLP, and data visualization. Along the way, I worked on projects 
+          ranging from predictive analytics to intelligent educational platforms, gaining hands-on experience in 
+          applying AI to solve real challenges.
         </p>
         <p className="text-lg text-gray-600 mb-8">
-          During my studies and training, I worked on diverse projects such as hotel booking 
-          cancellation prediction, breast cancer classification, and an AI-powered educational 
-          platform using NLP and LLMs. Skilled in Python, SQL, Machine Learning, NLP, and Data 
-          Visualization, I aim to leverage AI to bridge the gap between data and decision-making.
+          With expertise in Python, SQL, and machine learning frameworks like TensorFlow and PyTorch, I bring both 
+          technical skills and creativity to my work. What drives me most is curiosity and the excitement of transforming 
+          raw data into insights that inspire smarter decisions.
         </p>
         
         {/* Skills highlights with icons */}
@@ -163,7 +172,7 @@ function App() {
             </div>
             <div>
               <h3 className="font-semibold text-gray-900">Analytics</h3>
-              <p className="text-gray-600 text-sm">Statistical & Predictive Analysis</p>
+              <p className="text-gray-600 text-sm">Finding insights in data</p>
             </div>
           </div>
           
@@ -173,7 +182,7 @@ function App() {
             </div>
             <div>
               <h3 className="font-semibold text-gray-900">Machine Learning</h3>
-              <p className="text-gray-600 text-sm">Classification & NLP Models</p>
+              <p className="text-gray-600 text-sm">Building predictive models</p>
             </div>
           </div>
           
@@ -193,7 +202,7 @@ function App() {
             </div>
             <div>
               <h3 className="font-semibold text-gray-900">Visualization</h3>
-              <p className="text-gray-600 text-sm">Dashboards & Storytelling</p>
+              <p className="text-gray-600 text-sm">Interactive Dashboards</p>
             </div>
           </div>
         </div>
@@ -202,263 +211,352 @@ function App() {
       {/* Right: Profile Image */}
       <div className="flex justify-center">
         <img 
-          src="/images/profile.jpg" 
+          src="/Doaa.jpg"
           alt="Doaa Hazem" 
-          className="rounded-2xl shadow-lg w-80 h-80 object-cover"
+          className="rounded-2xl shadow-lg w-83 h-83 object-cover"
         />
       </div>
     </div>
   </div>
 </section>
 
+{/* Education Section */}
+<section id="education" className="py-20 bg-white">
+  <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-12">
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          Education
+        </h2>
+    </div>
 
-      {/* Skills Section */}
-      <section id="skills" className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Technical Skills
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              A comprehensive toolkit for data science, machine learning, and analytics
-            </p>
+    <div className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition duration-300 flex items-center gap-6">
+      {/* University Logo */}
+      <img 
+        src="/UNVV.jpg"   
+        alt="Benha University Logo" 
+        className="w-40 h-40 object-contain"
+      />
+
+      {/* University Info */}
+      <div>
+        <h3 className="text-xl font-semibold text-gray-900">
+          Bachelor of Computers and Artificial Intelligence
+        </h3>
+        <p className="text-gray-700">Specialization: <span className="font-medium">Artificial Intelligence</span></p>
+        <p className="text-gray-700">Benha University</p>
+        <p className="text-gray-600 text-sm">Sep 2021 – Jun 2025</p>
+        <p className="text-gray-700 mt-2">Grade: Distinction with Honours</p>
+        <p className="text-gray-700">GPA: 3.72 / 4.00</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{/* Skills Section */}
+<section id="skills" className="py-20 bg-gray-50">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-16">
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Technical Skills
+      </h2>
+      <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        Tools and technologies I use to build data-driven solutions
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Programming & Scripting */}
+      <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition duration-300">
+        <h3 className="font-semibold text-gray-900 mb-3">Programming & Scripting</h3>
+        <div className="flex flex-wrap gap-2">
+          {['Python', 'SQL'].map((skill, idx) => (
+            <span key={idx} className="px-3 py-1 border border-blue-200 bg-blue-50 text-blue-700 rounded-full text-sm">{skill}</span>
+          ))}
+        </div>
+      </div>
+
+      {/* Data Processing & Analysis */}
+      <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition duration-300">
+        <h3 className="font-semibold text-gray-900 mb-3">Data Processing & Analysis</h3>
+        <div className="flex flex-wrap gap-2">
+          {['NumPy', 'Pandas', 'Feature Engineering', 'Clustering', 'Dimensionality Reduction'].map((skill, idx) => (
+            <span key={idx} className="px-3 py-1 border border-blue-200 bg-blue-50 text-blue-700 rounded-full text-sm">{skill}</span>
+          ))}
+        </div>
+      </div>
+
+      {/* Machine Learning & AI (Spanning 2 rows) */}
+      <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition duration-300 lg:row-span-2">
+        <h3 className="font-semibold text-gray-900 mb-3">Machine Learning & AI</h3>
+        <div className="flex flex-wrap gap-2">
+          {['TensorFlow', 'Keras', 'PyTorch', 'Scikit-learn', 'NLP', 'Computer Vision', 'Time-Series', 'Deep Learning', 'Transformers'].map((skill, idx) => (
+            <span key={idx} className="px-3 py-1 border border-blue-200 bg-blue-50 text-blue-700 rounded-full text-sm">{skill}</span>
+          ))}
+        </div>
+      </div>
+
+      {/* Data Visualization */}
+      <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition duration-300">
+        <h3 className="font-semibold text-gray-900 mb-3">Data Visualization</h3>
+        <div className="flex flex-wrap gap-2">
+          {['Matplotlib', 'Seaborn', 'Plotly', 'Dash', 'Power BI'].map((skill, idx) => (
+            <span key={idx} className="px-3 py-1 border border-blue-200 bg-blue-50 text-blue-700 rounded-full text-sm">{skill}</span>
+          ))}
+        </div>
+      </div>
+
+      {/* Mathematics & Algorithms */}
+      <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition duration-300">
+        <h3 className="font-semibold text-gray-900 mb-3">Mathematics & Algorithms</h3>
+        <div className="flex flex-wrap gap-2">
+          {['Linear Algebra', 'Probability', 'Statistics', 'Optimization'].map((skill, idx) => (
+            <span key={idx} className="px-3 py-1 border border-blue-200 bg-blue-50 text-blue-700 rounded-full text-sm">{skill}</span>
+          ))}
+        </div>
+      </div>
+
+      {/* Deployment & MLOps */}
+      <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition duration-300">
+        <h3 className="font-semibold text-gray-900 mb-3">Deployment & MLOps</h3>
+        <div className="flex flex-wrap gap-2">
+          {['Flask', 'Streamlit', 'Gradio'].map((skill, idx) => (
+            <span key={idx} className="px-3 py-1 border border-blue-200 bg-blue-50 text-blue-700 rounded-full text-sm">{skill}</span>
+          ))}
+        </div>
+      </div>
+
+      {/* Version Control */}
+      <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition duration-300">
+        <h3 className="font-semibold text-gray-900 mb-3">Version Control & Collaboration</h3>
+        <div className="flex flex-wrap gap-2">
+          {['Git', 'GitHub'].map((skill, idx) => (
+            <span key={idx} className="px-3 py-1 border border-blue-200 bg-blue-50 text-blue-700 rounded-full text-sm">{skill}</span>
+          ))}
+        </div>
+      </div>
+
+      {/* Other Tools */}
+      <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition duration-300">
+        <h3 className="font-semibold text-gray-900 mb-3">Other Tools & Technologies</h3>
+        <div className="flex flex-wrap gap-2">
+          {['Web Scraping', 'Interactive Dashboards'].map((skill, idx) => (
+            <span key={idx} className="px-3 py-1 border border-blue-200 bg-blue-50 text-blue-700 rounded-full text-sm">{skill}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{/* Experience Section */}
+<section id="experience" className="py-20 bg-gray-50">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-16">
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Experience
+      </h2>
+    </div>
+
+    <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition duration-300">
+      <div className="flex items-center gap-2 mb-2">
+        <Calendar className="w-4 h-4 text-gray-500" />
+        <span className="text-sm text-gray-500">Jun 2025 – Present</span>
+      </div>
+      
+      <h3 className="text-xl font-semibold text-gray-900 mb-1">
+        AI & Data Science Trainee
+      </h3>
+      <p className="text-blue-600 font-medium mb-3">
+        Digital Egypt Pioneers Initiative (DEPI) / Ministry of Communication and Information Technology (MCIT)
+      </p>
+      
+      <ul className="space-y-2">
+        <li className="flex items-center gap-2 text-gray-700">
+          <Award className="w-4 h-4 text-green-500" />
+          <span className="text-sm">Gained hands-on experience in Python programming for data analysis and task automation</span>
+        </li>
+        <li className="flex items-center gap-2 text-gray-700">
+          <Award className="w-4 h-4 text-green-500" />
+          <span className="text-sm">Developed skills in web scraping and data collection from online sources</span>
+        </li>
+        <li className="flex items-center gap-2 text-gray-700">
+          <Award className="w-4 h-4 text-green-500" />
+          <span className="text-sm">Practiced collaborative coding and version control using Git and GitHub</span>
+        </li>
+        <li className="flex items-center gap-2 text-gray-700">
+          <Award className="w-4 h-4 text-green-500" />
+          <span className="text-sm">Strengthened understanding of the end-to-end data science workflow, from problem definition to model evaluation</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+{/* Services Section */}
+<section id="services" className="py-20 bg-gray-50">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-16">
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Offered Services
+      </h2>
+      <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        Helping businesses and researchers turn data into actionable insights with modern AI solutions
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {[
+        {
+          title: 'Data Analysis & Visualization',
+          description: 'Exploratory data analysis, interactive dashboards, and visual storytelling using Python, Power BI, and Plotly.',
+          icon: <BarChart3 className="w-6 h-6 text-blue-500" />
+        },
+        {
+          title: 'Machine Learning Models',
+          description: 'Building predictive and descriptive ML models for classification, regression, clustering, NLP, and computer vision.',
+          icon: <Brain className="w-6 h-6 text-green-500" />
+        },
+        {
+          title: 'Deep Learning Solutions',
+          description: 'Developing neural networks, transformers, and time-series forecasting models for complex problems.',
+          icon: <Layers className="w-6 h-6 text-purple-500" />
+        },
+        {
+          title: 'Data Preparation & Engineering',
+          description: 'Data cleaning, preprocessing, feature engineering, and ETL pipeline development.',
+          icon: <Database className="w-6 h-6 text-orange-500" />
+        },
+        {
+          title: 'Web Scraping & Data Collection',
+          description: 'Automating data collection from online sources using Python and web scraping tools.',
+          icon: <Globe2 className="w-6 h-6 text-cyan-500" />
+        },
+        {
+          title: 'Deployment & MLOps',
+          description: 'Deploying ML models with Flask, Streamlit, and Gradio for real-world applications.',
+          icon: <Server className="w-6 h-6 text-pink-500" />
+        }
+      ].map((service, idx) => (
+        <div key={idx} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition duration-300">
+          <div className="flex items-center gap-3 mb-4">
+            {service.icon}
+            <h3 className="text-lg font-semibold text-gray-800">{service.title}</h3>
           </div>
+          <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                category: 'Programming',
-                skills: [
-                  { name: 'Python', level: 95 },
-                  { name: 'R', level: 90 },
-                  { name: 'SQL', level: 85 },
-                  { name: 'JavaScript', level: 75 }
-                ]
-              },
-              {
-                category: 'Machine Learning',
-                skills: [
-                  { name: 'Scikit-learn', level: 90 },
-                  { name: 'TensorFlow', level: 85 },
-                  { name: 'PyTorch', level: 80 },
-                  { name: 'Keras', level: 88 }
-                ]
-              },
-              {
-                category: 'Data Tools',
-                skills: [
-                  { name: 'Pandas', level: 95 },
-                  { name: 'NumPy', level: 90 },
-                  { name: 'Apache Spark', level: 75 },
-                  { name: 'Hadoop', level: 70 }
-                ]
-              },
-              {
-                category: 'Visualization',
-                skills: [
-                  { name: 'Matplotlib', level: 90 },
-                  { name: 'Seaborn', level: 85 },
-                  { name: 'Plotly', level: 88 },
-                  { name: 'Tableau', level: 80 }
-                ]
-              }
-            ].map((category, idx) => (
-              <div key={idx} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
-                <h3 className="font-semibold text-gray-900 mb-4">{category.category}</h3>
-                <div className="space-y-4">
-                  {category.skills.map((skill, skillIdx) => (
-                    <div key={skillIdx}>
-                      <div className="flex justify-between mb-1">
-                        <span className="text-sm text-gray-700">{skill.name}</span>
-                        <span className="text-sm text-gray-500">{skill.level}%</span>
-                      </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2">
-                        <div 
-                          className="bg-gradient-to-r from-blue-500 to-cyan-500 h-2 rounded-full transition-all duration-1000 ease-out"
-                          style={{ width: `${skill.level}%` }}
-                        ></div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+{/* Projects Section */}
+<section id="projects" className="py-20 bg-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-16">
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Featured Projects
+      </h2>
+      <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        A showcase of my academic and freelance projects in data science and AI
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {[
+        {
+          title: 'Nexus: AI-powered Student Engagement System',
+          description: 'Developed a system to analyze student engagement using computer vision and NLP to enhance e-learning experiences.',
+          technologies: ['Python', 'OpenCV', 'Transformers', 'Flask'],
+          image: '/nexus.jpeg',
+          link: 'https://github.com/DoaaHazem/nexus_app'
+        },
+        {
+          title: 'Hotel Booking Cancellation Prediction',
+          description: 'Built a machine learning model to predict hotel booking cancellations and help optimize revenue management.',
+          technologies: ['Python', 'Scikit-learn', 'Pandas', 'Matplotlib'],
+          image: '/hotel.png',
+          link: 'https://github.com/DoaaHazem/Machine_Learning'
+        },
+        {
+          title: 'Calories Burnt Prediction',
+          description: 'Created a regression model to estimate calories burnt based on physical activity data.',
+          technologies: ['Python', 'Scikit-learn', 'Pandas', 'Seaborn'],
+          image: '/calory.png',
+          link: 'https://github.com/DoaaHazem/Machine_Learning_2'
+        },
+        {
+          title: 'Breast Cancer Detection',
+          description: 'Designed a deep learning model to classify breast cancer tumors from medical images.',
+          technologies: ['Python', 'TensorFlow', 'Keras'],
+          image: '/cancer.jpg',
+          link: 'https://github.com/username/breast-cancer'
+        },
+        {
+          title: 'Sales Dashboard',
+          description: 'Interactive Power BI dashboard to analyze sales performance, track KPIs, and provide actionable insights.',
+          technologies: ['Power BI', 'CSV Data'],
+          image: '/sales.jpeg',
+        },
+        {
+          title: 'Attendance & Cheating Detection Dashboard',
+          description: 'Power BI dashboard analyzing attention levels, cheating detection indicators, and student behavior in online exams.',
+          technologies: ['Power BI', 'CSV Data'],
+          image: '/dashh.png',
+        },
+        {
+          title: 'Hotel Management Dashboard',
+          description: 'Comprehensive Power BI dashboard for hotel operations, including bookings, revenue analysis, and customer satisfaction trends.',
+          technologies: ['Power BI', 'CSV Data'],
+          image: '/dash.png',
+        },
+      ].map((project, idx) => (
+      <div 
+        key={idx} 
+        className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden group"
+      >
+        <div className="relative overflow-hidden">
+          <img 
+            src={project.image} 
+            alt={project.title}
+            className="w-full h-64 object-contain group-hover:scale-105 transition-transform duration-300 bg-gray-100"
+          />
+        </div>
+
+        <div className="p-5">
+          <h3 className="text-lg font-semibold text-gray-900 mb-2">{project.title}</h3>
+          <p className="text-gray-600 mb-3 text-sm">{project.description}</p>
+
+          <div className="flex flex-wrap gap-2 mb-3">
+            {project.technologies.map((tech, techIdx) => (
+              <span 
+                key={techIdx}
+                className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs"
+              >
+                {tech}
+              </span>
             ))}
           </div>
+
+          {project.link && (
+            <a 
+              href={project.link} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1 text-sm transition-colors duration-200"
+            >
+              View Project
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          )}
         </div>
-      </section>
+      </div>
+    ))}
+  </div>
+  </div>
+</section>
 
-      {/* Projects Section */}
-      <section id="projects" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Featured Projects
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              A showcase of my data science projects and machine learning applications
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: 'Customer Churn Prediction',
-                description: 'Machine learning model to predict customer churn using ensemble methods and feature engineering.',
-                technologies: ['Python', 'Scikit-learn', 'XGBoost', 'Pandas'],
-                image: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800',
-                metrics: '94% Accuracy'
-              },
-              {
-                title: 'Sales Forecasting Dashboard',
-                description: 'Interactive dashboard for sales forecasting using time series analysis and ARIMA models.',
-                technologies: ['R', 'Shiny', 'ggplot2', 'Forecast'],
-                image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800',
-                metrics: '15% Error Reduction'
-              },
-              {
-                title: 'Sentiment Analysis System',
-                description: 'NLP system for real-time sentiment analysis of social media data with deep learning.',
-                technologies: ['Python', 'NLTK', 'TensorFlow', 'Flask'],
-                image: 'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=800',
-                metrics: '91% F1-Score'
-              },
-              {
-                title: 'Fraud Detection Model',
-                description: 'Anomaly detection system for financial fraud using unsupervised learning techniques.',
-                technologies: ['Python', 'Isolation Forest', 'DBSCAN', 'Streamlit'],
-                image: 'https://images.pexels.com/photos/259200/pexels-photo-259200.jpeg?auto=compress&cs=tinysrgb&w=800',
-                metrics: '98% Detection Rate'
-              },
-              {
-                title: 'Recommendation Engine',
-                description: 'Collaborative filtering system for e-commerce product recommendations.',
-                technologies: ['Python', 'Surprise', 'Matrix Factorization', 'AWS'],
-                image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
-                metrics: '25% CTR Increase'
-              },
-              {
-                title: 'COVID-19 Data Analysis',
-                description: 'Comprehensive analysis and visualization of COVID-19 trends and patterns.',
-                technologies: ['Python', 'Matplotlib', 'Seaborn', 'Jupyter'],
-                image: 'https://images.pexels.com/photos/3992933/pexels-photo-3992933.jpeg?auto=compress&cs=tinysrgb&w=800',
-                metrics: '1M+ Views'
-              }
-            ].map((project, idx) => (
-              <div key={idx} className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden group">
-                <div className="relative overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                    {project.metrics}
-                  </div>
-                </div>
-                
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{project.title}</h3>
-                  <p className="text-gray-600 mb-4">{project.description}</p>
-                  
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech, techIdx) => (
-                      <span 
-                        key={techIdx}
-                        className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  
-                  <button className="text-blue-600 hover:text-blue-700 font-medium flex items-center gap-2 transition-colors duration-200">
-                    View Project
-                    <ExternalLink className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Experience Section */}
-      <section id="experience" className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Professional Experience
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              My journey in data science and machine learning
-            </p>
-          </div>
-
-          <div className="relative">
-            <div className="absolute left-4 md:left-1/2 md:transform md:-translate-x-1/2 h-full w-0.5 bg-gray-200"></div>
-            
-            {[
-              {
-                title: 'Senior Data Scientist',
-                company: 'Tech Innovation Corp',
-                period: '2023 - Present',
-                description: 'Leading machine learning initiatives and mentoring junior data scientists. Developed predictive models that increased revenue by 20%.',
-                achievements: [
-                  'Built end-to-end ML pipelines',
-                  'Improved model accuracy by 15%',
-                  'Led team of 4 data scientists'
-                ]
-              },
-              {
-                title: 'Data Scientist',
-                company: 'Analytics Solutions Ltd',
-                period: '2021 - 2023',
-                description: 'Developed machine learning models for customer segmentation and recommendation systems.',
-                achievements: [
-                  'Created customer churn model',
-                  'Implemented A/B testing framework',
-                  'Reduced analysis time by 40%'
-                ]
-              },
-              {
-                title: 'Junior Data Analyst',
-                company: 'Data Insights Inc',
-                period: '2020 - 2021',
-                description: 'Started my journey in data science, focusing on statistical analysis and data visualization.',
-                achievements: [
-                  'Automated reporting processes',
-                  'Created interactive dashboards',
-                  'Learned advanced SQL techniques'
-                ]
-              }
-            ].map((exp, idx) => (
-              <div key={idx} className={`relative mb-12 ${idx % 2 === 0 ? 'md:pr-8' : 'md:pl-8 md:ml-auto'} md:w-1/2`}>
-                <div className="absolute w-4 h-4 bg-blue-600 rounded-full left-2 md:left-auto md:right-[-8px] top-6 transform md:translate-x-1/2"></div>
-                
-                <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300 ml-8 md:ml-0">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Calendar className="w-4 h-4 text-gray-500" />
-                    <span className="text-sm text-gray-500">{exp.period}</span>
-                  </div>
-                  
-                  <h3 className="text-xl font-semibold text-gray-900 mb-1">{exp.title}</h3>
-                  <p className="text-blue-600 font-medium mb-3">{exp.company}</p>
-                  <p className="text-gray-600 mb-4">{exp.description}</p>
-                  
-                  <ul className="space-y-2">
-                    {exp.achievements.map((achievement, achIdx) => (
-                      <li key={achIdx} className="flex items-center gap-2 text-gray-700">
-                        <Award className="w-4 h-4 text-green-500" />
-                        <span className="text-sm">{achievement}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-white">
@@ -479,8 +577,8 @@ function App() {
                   <Mail className="w-8 h-8 text-blue-600" />
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">Email</h3>
-                <a href="mailto:doaahazem711@gmail.com" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
-                  doaahazem711@gmail.com
+                <a href="doaahazem711@gmail.com" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
+                  Contact
                 </a>
               </div>
               

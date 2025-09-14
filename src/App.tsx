@@ -220,7 +220,7 @@ function App() {
       {/* Right: Profile Image */}
       <div className="flex justify-center">
         <img 
-          src="/Doaa.jpg"
+          src="/portfolio/Doaa.jpg"
           alt="Doaa Hazem" 
           className="rounded-2xl shadow-lg w-83 h-83 object-cover"
         />
@@ -245,7 +245,7 @@ function App() {
       {/* University */}
       <div className="bg-blue-50 rounded-xl p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center text-center">
         <img 
-          src="/UNVV.jpg"   
+          src="/portfolio/UNVV.jpg"   
           alt="Benha University Logo" 
           className="w-30 h-28 object-contain mb-4"
         />
@@ -262,7 +262,7 @@ function App() {
       {/* NTI */}
       <div className="bg-blue-50 rounded-xl p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col text-center">
         <img 
-          src="/NTI.png"   
+          src="/portfolio/NTI.png"   
           alt="NTI Logo" 
           className="w-30 h-28 object-contain mx-auto mb-4"
         />
@@ -281,7 +281,7 @@ function App() {
       {/* DEPI */}
       <div className="bg-blue-50 rounded-xl p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col text-center">
         <img 
-          src="/DEPI.png"   
+          src="/portfolio/DEPI.png"   
           alt="DEPI Logo" 
           className="w-30 h-28 object-contain mx-auto mb-4"
         />
@@ -472,60 +472,60 @@ function App() {
           title: 'Nexus: AI-powered Student Engagement System',
           description: 'Developed a system to analyze student engagement using computer vision and NLP to enhance e-learning experiences.',
           technologies: ['Python', 'OpenCV', 'Transformers', 'Flask'],
-          image: '/nexus.jpeg',
+          image: '/portfolio/nexus.jpeg',
           link: 'https://github.com/DoaaHazem/nexus_app'
         },
         {
           title: 'Hotel Booking Cancellation Prediction',
           description: 'Built a machine learning model to predict hotel booking cancellations and help optimize revenue management.',
           technologies: ['Python', 'Scikit-learn', 'Pandas', 'Matplotlib'],
-          image: '/hotel.png',
+          image: '/portfolio/hotel.png',
           link: 'https://github.com/DoaaHazem/Machine_Learning'
         },
         {
           title: 'Calories Burnt Prediction',
           description: 'Created a regression model to estimate calories burnt based on physical activity data.',
           technologies: ['Python', 'Scikit-learn', 'Pandas', 'Seaborn'],
-          image: '/calory.png',
+          image: '/portfolio/calory.png',
           link: 'https://github.com/DoaaHazem/Machine_Learning_2'
         },
         {
           title: 'Breast Cancer Detection',
           description: 'Designed a deep learning model to classify breast cancer tumors from medical images.',
           technologies: ['Python', 'TensorFlow', 'Keras'],
-          image: '/cancer.jpg'
+          image: '/portfolio/cancer.jpg'
         },
         {
           title: 'Sales Dashboard',
           description: 'Interactive Power BI dashboard to analyze sales performance, track KPIs, and provide actionable insights.',
           technologies: ['Power BI', 'CSV Data'],
-          image: '/sales.jpeg',
+          image: '/portfolio/sales.jpeg',
         },
         {
           title: 'Attendance & Cheating Detection Dashboard',
           description: 'Power BI dashboard analyzing attention levels, cheating detection indicators, and student behavior in online exams.',
           technologies: ['Power BI', 'CSV Data'],
-          image: '/dashh.png',
+          image: '/portfolio/dashh.png',
         },
         {
           title: 'Hotel Management Dashboard',
           description: 'Comprehensive Power BI dashboard for hotel operations, including bookings, revenue analysis, and customer satisfaction trends.',
           technologies: ['Power BI', 'CSV Data'],
-          image: '/dash.png',
+          image: '/portfolio/dash.png',
           link: 'https://github.com/DoaaHazem/Machine_Learning'
         },
         {
           title: 'Employee Management System (Python)',
           description: 'Python program for managing employee records using CSV files.The system allows adding, updating, deleting, searching, and viewing employee details.',
           technologies: ['Python', 'CLI'],
-          image: '/cli.png',
+          image: '/portfolio/cli.png',
           link: 'https://github.com/DoaaHazem/Python_Project'
         },
         {
           title: 'Web Scraping Task',
           description: 'perform web scraping on a target webpage to extract various types of data and store them in structured formats (CSV and JSON).',
           technologies: ['Python', 'Beautiful Soup'],
-          image: '/web_scraping_banner.png',
+          image: '/portfolio/web_scraping_banner.png',
           link: 'https://github.com/DoaaHazem/Web_Scraping'
         },
       ].map((project, idx) => (

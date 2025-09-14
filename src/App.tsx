@@ -18,7 +18,8 @@ import {
   Globe2,
   Layers,
   MapPin,
-  Phone
+  Phone,  
+  MessageCircle
 } from 'lucide-react';
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
       setScrolled(window.scrollY > 50);
       
       // Update active section based on scroll position
-      const sections = ['home', 'about', 'education', 'skills', 'experience', 'services','projects', 'contact'];
+      const sections = ['home', 'about', 'education', 'skills', 'services','projects', 'contact'];
       const currentSection = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -64,9 +65,9 @@ function App() {
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="font-bold text-xl text-gray-900">
-              Doaa Hazem
-            </div>
+            <h1 className="bg-gradient-to-r font-bold from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+             Doaa Hazem
+            </h1>
             
             <div className="hidden md:flex space-x-8">
               {[
@@ -74,7 +75,6 @@ function App() {
                 { id: 'about', label: 'About' },
                 { id: 'education', label: 'Education' },
                 { id: 'skills', label: 'Skills' },
-                { id: 'experience', label: 'Experience' },
                 { id: 'services', label: 'Services' },
                 { id: 'projects', label: 'Projects' },
                 { id: 'contact', label: 'Contact' }
@@ -111,8 +111,11 @@ function App() {
           Doaa Hazem
         </span>
       </h1>
-      <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-        Data Scientist & Machine Learning Engineer passionate about transforming data into actionable insights.
+      <p className="text-xl md:text-2xl text-black-600 mb-2 max-w-3xl mx-auto">
+        Data Scientist | AI/ML Engineer | Data Analyst 
+      </p>
+      <p className="text-xl md:text-2xl text-gray-00 mb-8 max-w-3xl mx-auto">
+        passionate about transforming data into actionable insights.
       </p>
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
         <button 
@@ -148,22 +151,28 @@ function App() {
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
           About Me
         </h2>
-        <p className="text-lg text-gray-600 mb-6">
-          I’m <span className="font-semibold text-blue-600">Doaa Hazem</span>, a Data Scientist with a background 
-          in Artificial Intelligence and a passion for uncovering stories hidden in data.
-        </p>
-        <p className="text-lg text-gray-600 mb-6">
-          My journey started as a Computer and AI student at Benha University, where I built a strong foundation 
-          in ML, DL, NLP, and data visualization. Along the way, I worked on projects 
-          ranging from predictive analytics to intelligent educational platforms, gaining hands-on experience in 
-          applying AI to solve real challenges.
-        </p>
-        <p className="text-lg text-gray-600 mb-8">
-          With expertise in Python, SQL, and machine learning frameworks like TensorFlow and PyTorch, I bring both 
-          technical skills and creativity to my work. What drives me most is curiosity and the excitement of transforming 
-          raw data into insights that inspire smarter decisions.
+        <p className="text-lg text-gray-600 mb-4">
+          I’m <span className="font-semibold text-blue-600">Doaa Hazem</span>, a Data Scientist specialized in Artificial Intelligence 
+          with a strong focus on delivering real business value from data.
         </p>
         
+        <p className="text-lg text-gray-600 mb-4">
+          My goal isn’t just to build models, but to <span className="font-medium text-gray-900">help clients solve their problems and make smarter decisions</span>. 
+          Whether it’s analyzing customer behavior, predicting trends, or automating workflows, I make sure every solution is 
+          practical, accurate, and aligned with the client’s goals.
+        </p>
+        
+        <p className="text-lg text-gray-600 mb-4">
+          What makes me different? <span className="font-medium text-blue-600">I combine technical depth with creativity and clarity</span>. 
+          I simplify complex data into actionable insights, design intuitive dashboards, and build AI systems that are not only 
+          powerful but also easy to use.
+        </p>
+        <p className="text-lg text-gray-600 mb-4">
+          Clients choose me because I’m <span className="font-medium text-gray-900"> curious, detail-oriented, and committed to delivering 
+          impact—not just outputs. </span>
+        </p>
+
+
         {/* Skills highlights with icons */}
         <div className="grid grid-cols-2 gap-6">
           <div className="flex items-center gap-3">
@@ -172,7 +181,7 @@ function App() {
             </div>
             <div>
               <h3 className="font-semibold text-gray-900">Analytics</h3>
-              <p className="text-gray-600 text-sm">Finding insights in data</p>
+              <p className="text-gray-600 text-sm">Uncovering insights in data</p>
             </div>
           </div>
           
@@ -191,8 +200,8 @@ function App() {
               <Database className="w-6 h-6 text-orange-600" />
             </div>
             <div>
-              <h3 className="font-semibold text-gray-900">Data Engineering</h3>
-              <p className="text-gray-600 text-sm">ETL & Pipelines</p>
+              <h3 className="font-semibold text-gray-900">Data Preprocessing</h3>
+              <p className="text-gray-600 text-sm">Cleaning & transforming raw data</p>
             </div>
           </div>
           
@@ -202,7 +211,7 @@ function App() {
             </div>
             <div>
               <h3 className="font-semibold text-gray-900">Visualization</h3>
-              <p className="text-gray-600 text-sm">Interactive Dashboards</p>
+              <p className="text-gray-600 text-sm">Interactive dashboards & reports</p>
             </div>
           </div>
         </div>
@@ -220,27 +229,28 @@ function App() {
   </div>
 </section>
 
+
 {/* Education Section */}
-<section id="education" className="py-20 bg-white">
-  <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="education" className="py-20 bg-white"> 
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div className="text-center mb-12">
       <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-          Education
-        </h2>
+        Education & Training
+      </h2>
     </div>
 
-    <div className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition duration-300 flex items-center gap-6">
-      {/* University Logo */}
-      <img 
-        src="/UNVV.jpg"   
-        alt="Benha University Logo" 
-        className="w-40 h-40 object-contain"
-      />
-
-      {/* University Info */}
-      <div>
-        <h3 className="text-xl font-semibold text-gray-900">
-          Bachelor of Computers and Artificial Intelligence
+    {/* Cards Container */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      {/* University */}
+      <div className="bg-blue-50 rounded-xl p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center text-center">
+        <img 
+          src="/UNVV.jpg"   
+          alt="Benha University Logo" 
+          className="w-30 h-28 object-contain mb-4"
+        />
+        <h3 className="text-lg font-semibold text-gray-900">
+          Bachelor of Computers & AI
         </h3>
         <p className="text-gray-700">Specialization: <span className="font-medium">Artificial Intelligence</span></p>
         <p className="text-gray-700">Benha University</p>
@@ -248,10 +258,48 @@ function App() {
         <p className="text-gray-700 mt-2">Grade: Distinction with Honours</p>
         <p className="text-gray-700">GPA: 3.72 / 4.00</p>
       </div>
+
+      {/* NTI */}
+      <div className="bg-blue-50 rounded-xl p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col text-center">
+        <img 
+          src="/NTI.png"   
+          alt="NTI Logo" 
+          className="w-30 h-28 object-contain mx-auto mb-4"
+        />
+        <h3 className="text-lg font-semibold text-gray-900">
+          Machine Learning for Data Analysis
+        </h3>
+        <p className="text-gray-700">National Telecommunication Institute (NTI), Egypt</p>
+        <p className="text-gray-600 text-sm">Jul 2024 – Sep 2024</p>
+        <ul className="text-gray-700 text-sm mt-3 list-disc list-inside text-left">
+          <li>Practical experience in ML and data science techniques</li>
+          <li>Worked on real-world projects with preprocessing & feature engineering</li>
+          <li>Enhanced proficiency in predictive modeling</li>
+        </ul>
+      </div>
+
+      {/* DEPI */}
+      <div className="bg-blue-50 rounded-xl p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col text-center">
+        <img 
+          src="/DEPI.png"   
+          alt="DEPI Logo" 
+          className="w-30 h-28 object-contain mx-auto mb-4"
+        />
+        <h3 className="text-lg font-semibold text-gray-900">
+          AI & Data Science Trainee
+        </h3>
+        <p className="text-gray-700">Digital Egypt Pioneers Initiative (DEPI) / MCIT</p>
+        <p className="text-gray-600 text-sm">Jun 2025 – Present</p>
+        <ul className="text-gray-700 text-sm mt-3 list-disc list-inside text-left">
+          <li>Hands-on Python programming for analysis & automation</li>
+          <li>Developed web scraping and data collection skills</li>
+          <li>Collaborative coding & version control with Git/GitHub</li>
+          <li>Strengthened knowledge of end-to-end data science workflow</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
-
 
 {/* Skills Section */}
 <section id="skills" className="py-20 bg-gray-50">
@@ -349,50 +397,6 @@ function App() {
   </div>
 </section>
 
-{/* Experience Section */}
-<section id="experience" className="py-20 bg-gray-50">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="text-center mb-16">
-      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-        Experience
-      </h2>
-    </div>
-
-    <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition duration-300">
-      <div className="flex items-center gap-2 mb-2">
-        <Calendar className="w-4 h-4 text-gray-500" />
-        <span className="text-sm text-gray-500">Jun 2025 – Present</span>
-      </div>
-      
-      <h3 className="text-xl font-semibold text-gray-900 mb-1">
-        AI & Data Science Trainee
-      </h3>
-      <p className="text-blue-600 font-medium mb-3">
-        Digital Egypt Pioneers Initiative (DEPI) / Ministry of Communication and Information Technology (MCIT)
-      </p>
-      
-      <ul className="space-y-2">
-        <li className="flex items-center gap-2 text-gray-700">
-          <Award className="w-4 h-4 text-green-500" />
-          <span className="text-sm">Gained hands-on experience in Python programming for data analysis and task automation</span>
-        </li>
-        <li className="flex items-center gap-2 text-gray-700">
-          <Award className="w-4 h-4 text-green-500" />
-          <span className="text-sm">Developed skills in web scraping and data collection from online sources</span>
-        </li>
-        <li className="flex items-center gap-2 text-gray-700">
-          <Award className="w-4 h-4 text-green-500" />
-          <span className="text-sm">Practiced collaborative coding and version control using Git and GitHub</span>
-        </li>
-        <li className="flex items-center gap-2 text-gray-700">
-          <Award className="w-4 h-4 text-green-500" />
-          <span className="text-sm">Strengthened understanding of the end-to-end data science workflow, from problem definition to model evaluation</span>
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
 {/* Services Section */}
 <section id="services" className="py-20 bg-gray-50">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -458,7 +462,7 @@ function App() {
         Featured Projects
       </h2>
       <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-        A showcase of my academic and freelance projects in data science and AI
+        A showcase of my academic projects in data science and AI
       </p>
     </div>
 
@@ -489,8 +493,7 @@ function App() {
           title: 'Breast Cancer Detection',
           description: 'Designed a deep learning model to classify breast cancer tumors from medical images.',
           technologies: ['Python', 'TensorFlow', 'Keras'],
-          image: '/cancer.jpg',
-          link: 'https://github.com/username/breast-cancer'
+          image: '/cancer.jpg'
         },
         {
           title: 'Sales Dashboard',
@@ -509,6 +512,21 @@ function App() {
           description: 'Comprehensive Power BI dashboard for hotel operations, including bookings, revenue analysis, and customer satisfaction trends.',
           technologies: ['Power BI', 'CSV Data'],
           image: '/dash.png',
+          link: 'https://github.com/DoaaHazem/Machine_Learning'
+        },
+        {
+          title: 'Employee Management System (Python)',
+          description: 'Python program for managing employee records using CSV files.The system allows adding, updating, deleting, searching, and viewing employee details.',
+          technologies: ['Python', 'CLI'],
+          image: '/cli.png',
+          link: 'https://github.com/DoaaHazem/Python_Project'
+        },
+        {
+          title: 'Web Scraping Task',
+          description: 'perform web scraping on a target webpage to extract various types of data and store them in structured formats (CSV and JSON).',
+          technologies: ['Python', 'Beautiful Soup'],
+          image: '/web_scraping_banner.png',
+          link: 'https://github.com/DoaaHazem/Web_Scraping'
         },
       ].map((project, idx) => (
       <div 
@@ -559,73 +577,96 @@ function App() {
 
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Let's Connect
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Interested in collaborating or discussing data science opportunities? I'd love to hear from you!
-            </p>
-          </div>
+<section id="contact" className="py-20 bg-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-16">
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Let's Connect
+      </h2>
+      <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        Interested in collaborating or discussing data science opportunities? I'd love to hear from you!
+      </p>
+    </div>
 
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-              <div className="text-center group">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-200 transition-colors duration-300">
-                  <Mail className="w-8 h-8 text-blue-600" />
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-2">Email</h3>
-                <a href="doaahazem711@gmail.com" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
-                  Contact
-                </a>
-              </div>
-              
-              <div className="text-center group">
-                <div className="w-16 h-16 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-cyan-200 transition-colors duration-300">
-                  <Linkedin className="w-8 h-8 text-cyan-600" />
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-2">LinkedIn</h3>
-                <a href="https://www.linkedin.com/in/doaa-hazem-hassan" className="text-gray-600 hover:text-cyan-600 transition-colors duration-200">
-                  Connect with me
-                </a>
-              </div>
-              
-              <div className="text-center group">
-                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-gray-200 transition-colors duration-300">
-                  <Github className="w-8 h-8 text-gray-600" />
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-2">GitHub</h3>
-                <a href="https://github.com/DoaaHazem" className="text-gray-600 hover:text-gray-800 transition-colors duration-200">
-                  View my code
-                </a>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl p-8 text-center text-white">
-              <h3 className="text-2xl font-bold mb-4">Ready to work together?</h3>
-              <p className="mb-6 opacity-90">
-                I'm always open to discussing new opportunities and exciting data science projects.
-              </p>
-              <a 
-                href="mailto:doaahazem711@gmail.com"
-                className="inline-flex items-center gap-2 bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-200"
-              >
-                <Mail className="w-4 h-4" />
-                Get In Touch
-              </a>
-            </div>
+    <div className="max-w-4xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        
+        {/* WhatsApp */}
+        <div className="text-center group">
+          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-colors duration-300">
+            <MessageCircle className="w-8 h-8 text-green-600" />
           </div>
+          <h3 className="font-semibold text-gray-900 mb-2">WhatsApp</h3>
+          <a 
+            href="https://wa.me/201061284242" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-gray-600 hover:text-green-600 transition-colors duration-200"
+          >
+            Chat on WhatsApp
+          </a>
         </div>
-      </section>
+
+
+        {/* Email */}
+        <div className="text-center group">
+          <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-200 transition-colors duration-300">
+            <Mail className="w-8 h-8 text-blue-600" />
+          </div>
+          <h3 className="font-semibold text-gray-900 mb-2">Email</h3>
+          <a href="mailto:doaahazem711@gmail.com" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
+            Contact me
+          </a>
+        </div>
+        
+        {/* LinkedIn */}
+        <div className="text-center group">
+          <div className="w-16 h-16 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-cyan-200 transition-colors duration-300">
+            <Linkedin className="w-8 h-8 text-cyan-600" />
+          </div>
+          <h3 className="font-semibold text-gray-900 mb-2">LinkedIn</h3>
+          <a href="https://www.linkedin.com/in/doaa-hazem-hassan" className="text-gray-600 hover:text-cyan-600 transition-colors duration-200">
+            Connect with me
+          </a>
+        </div>
+        
+        {/* GitHub */}
+        <div className="text-center group">
+          <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-gray-200 transition-colors duration-300">
+            <Github className="w-8 h-8 text-gray-600" />
+          </div>
+          <h3 className="font-semibold text-gray-900 mb-2">GitHub</h3>
+          <a href="https://github.com/DoaaHazem" className="text-gray-600 hover:text-gray-800 transition-colors duration-200">
+            View my code
+          </a>
+        </div>
+      </div>
+
+      {/* Call to Action */}
+      <div className="bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl p-8 text-center text-white">
+        <h3 className="text-2xl font-bold mb-4">Ready to work together?</h3>
+        <p className="mb-6 opacity-90">
+          I'm always open to discussing new opportunities and exciting data science projects.
+        </p>
+        <a 
+          href="mailto:doaahazem711@gmail.com"
+          className="inline-flex items-center gap-2 bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-200"
+        >
+          <Mail className="w-4 h-4" />
+          Get In Touch
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h3 className="text-2xl font-bold mb-4">Doaa Hazem</h3>
-            <p className="text-gray-400 mb-6">Data Scientist & Machine Learning Engineer</p>
+            <p className="text-gray-400 mb-6">Data Scientist | AI/ML Engineer | Data Analyst</p>
             
             <div className="flex justify-center space-x-6 mb-8">
               <a href="mailto:doaahazem711@gmail.com" className="text-gray-400 hover:text-white transition-colors duration-200">
